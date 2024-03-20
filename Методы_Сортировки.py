@@ -13,7 +13,7 @@ def bubbleSort(arr):
 
 
 # Сортировка выбором
-def selectionSort(array): 
+def selectionSort(array: list): 
     for i in range(len(array)-1):
         min_idx = i 
         for idx in range(i+1, len(array)-1):
@@ -25,7 +25,7 @@ def selectionSort(array):
 
 
 # Сортировка вставкой
-def insertSort(array):
+def insertSort(array: list):
     for i in range(1, len(array)):
         x = array[i]
         j = i
@@ -38,7 +38,7 @@ def insertSort(array):
     return array    
     
 # Сортировка кучей
-def heapify(array, n, i):
+def heapify(array: list, n, i):
     largest = i
     l = 2*i+1
     r = 2*i+2
@@ -48,7 +48,7 @@ def heapify(array, n, i):
     if largest != i:
         array[i], array[largest] = array[largest], array[i]
         heapify(array, n, largest)
-def heapSort(array):
+def heapSort(array: list):
     for i in range(len(array)//2, -1, -1):
         heapify(array, len(array), i)
     for i in range(len(array)-1, 0, -1):
@@ -87,7 +87,7 @@ def merge(lst1, lst2):
     return lst
  
 # Быстрая Сортировка (реально быстрая)
-def quickSort(array):
+def quickSort(array: list):
     if len(array) > 1:
         pivot = array.pop()
         grtr_lst, equal_lst, smlr_lst = [], [pivot], []
